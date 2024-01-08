@@ -1,0 +1,82 @@
+2024-01-01 10:11:37.356 +0530 [debug] ([34mconfigs.js[0m) [31mloaded default configs as "{"updates":{"manifest_url":"https://ws.freshdev.io/cli/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":5000}}"[0m
+2024-01-01 10:11:37.359 +0530 [debug] ([34mfile-util.js[0m) [31mError while requiring /Users/nbhati/.fdk/configs.json: Cannot find module '/Users/nbhati/.fdk/configs.json'
+Require stack:
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/utils/file-util.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/configs.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/logger.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/index.js[0m
+2024-01-01 10:11:37.360 +0530 [debug] ([34mconfigs.js[0m) [31mloaded global configs as "{}"[0m
+2024-01-01 10:11:37.360 +0530 [debug] ([34mfile-util.js[0m) [31mError while requiring /Users/nbhati/codebase/freshdesk/fdk-extension/src/scripts/.fdk/configs.json: Cannot find module '/Users/nbhati/codebase/freshdesk/fdk-extension/src/scripts/.fdk/configs.json'
+Require stack:
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/utils/file-util.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/configs.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/logger.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/index.js[0m
+2024-01-01 10:11:37.360 +0530 [debug] ([34mconfigs.js[0m) [31mloaded local configs as "{}"[0m
+2024-01-01 10:11:37.361 +0530 [debug] ([34mconfigs.js[0m) [31mloaded env configs as "{"updates":{},"log":{},"javascript":{},"request":{"timeout":5000}}"[0m
+2024-01-01 10:11:37.361 +0530 [debug] ([34mconfigs.js[0m) [31mloaded resolved configs as "{"updates":{"manifest_url":"https://ws.freshdev.io/cli/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":5000}}"[0m
+2024-01-01 10:11:37.361 +0530 [debug] ([34mlogger.js[0m) [31mStarting FDK in node v18.12.1 on darwin[0m
+2024-01-01 10:11:37.361 +0530 [debug] ([34msequelize.js[0m) [31msetting up sqilite at "/Users/nbhati/codebase/freshdesk/fdk-extension/src/scripts/.fdk/store.sqlite"[0m
+2024-01-01 10:11:37.363 +0530 [error] [31m[ERROR][0m  Node.js version of 14.x.x is required to run this SDK. v18.12.1 found.
+2024-01-01 12:42:03.321 +0530 [debug] ([34mconfigs.js[0m) [31mloaded default configs as "{"updates":{"manifest_url":"https://ws.freshdev.io/cli/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":5000}}"[0m
+2024-01-01 12:42:03.323 +0530 [debug] ([34mfile-util.js[0m) [31mError while requiring /Users/nbhati/.fdk/configs.json: Cannot find module '/Users/nbhati/.fdk/configs.json'
+Require stack:
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/utils/file-util.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/configs.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/logger.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/index.js[0m
+2024-01-01 12:42:03.324 +0530 [debug] ([34mconfigs.js[0m) [31mloaded global configs as "{}"[0m
+2024-01-01 12:42:03.324 +0530 [debug] ([34mfile-util.js[0m) [31mError while requiring /Users/nbhati/codebase/freshdesk/fdk-extension/src/scripts/.fdk/configs.json: Cannot find module '/Users/nbhati/codebase/freshdesk/fdk-extension/src/scripts/.fdk/configs.json'
+Require stack:
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/utils/file-util.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/configs.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/logger.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/index.js[0m
+2024-01-01 12:42:03.324 +0530 [debug] ([34mconfigs.js[0m) [31mloaded local configs as "{}"[0m
+2024-01-01 12:42:03.324 +0530 [debug] ([34mconfigs.js[0m) [31mloaded env configs as "{"updates":{},"log":{},"javascript":{},"request":{"timeout":5000}}"[0m
+2024-01-01 12:42:03.324 +0530 [debug] ([34mconfigs.js[0m) [31mloaded resolved configs as "{"updates":{"manifest_url":"https://ws.freshdev.io/cli/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":5000}}"[0m
+2024-01-01 12:42:03.324 +0530 [debug] ([34mlogger.js[0m) [31mStarting FDK in node v18.12.1 on darwin[0m
+2024-01-01 12:42:03.325 +0530 [debug] ([34msequelize.js[0m) [31msetting up sqilite at "/Users/nbhati/codebase/freshdesk/fdk-extension/src/scripts/.fdk/store.sqlite"[0m
+2024-01-01 12:42:03.326 +0530 [error] [31m[ERROR][0m  Node.js version of 14.x.x is required to run this SDK. v18.12.1 found.
+2024-01-01 12:42:14.535 +0530 [debug] ([34mconfigs.js[0m) [31mloaded default configs as "{"updates":{"manifest_url":"https://ws.freshdev.io/cli/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":5000}}"[0m
+2024-01-01 12:42:14.538 +0530 [debug] ([34mfile-util.js[0m) [31mError while requiring /Users/nbhati/.fdk/configs.json: Cannot find module '/Users/nbhati/.fdk/configs.json'
+Require stack:
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/utils/file-util.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/configs.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/logger.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/index.js[0m
+2024-01-01 12:42:14.538 +0530 [debug] ([34mconfigs.js[0m) [31mloaded global configs as "{}"[0m
+2024-01-01 12:42:14.538 +0530 [debug] ([34mfile-util.js[0m) [31mError while requiring /Users/nbhati/codebase/freshdesk/fdk-extension/src/scripts/.fdk/configs.json: Cannot find module '/Users/nbhati/codebase/freshdesk/fdk-extension/src/scripts/.fdk/configs.json'
+Require stack:
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/utils/file-util.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/configs.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/logger.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/index.js[0m
+2024-01-01 12:42:14.538 +0530 [debug] ([34mconfigs.js[0m) [31mloaded local configs as "{}"[0m
+2024-01-01 12:42:14.538 +0530 [debug] ([34mconfigs.js[0m) [31mloaded env configs as "{"updates":{},"log":{},"javascript":{},"request":{"timeout":5000}}"[0m
+2024-01-01 12:42:14.538 +0530 [debug] ([34mconfigs.js[0m) [31mloaded resolved configs as "{"updates":{"manifest_url":"https://ws.freshdev.io/cli/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":5000}}"[0m
+2024-01-01 12:42:14.539 +0530 [debug] ([34mlogger.js[0m) [31mStarting FDK in node v18.12.1 on darwin[0m
+2024-01-01 12:42:14.539 +0530 [debug] ([34msequelize.js[0m) [31msetting up sqilite at "/Users/nbhati/codebase/freshdesk/fdk-extension/src/scripts/.fdk/store.sqlite"[0m
+2024-01-01 12:42:14.540 +0530 [error] [31m[ERROR][0m  Node.js version of 14.x.x is required to run this SDK. v18.12.1 found.
+2024-01-01 12:44:27.852 +0530 [debug] ([34mconfigs.js[0m) [31mloaded default configs as "{"updates":{"manifest_url":"https://cdn.freshdev.io/assets/fdk/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":5000}}"[0m
+2024-01-01 12:44:27.856 +0530 [debug] ([34mfile.js[0m) [31mError while requiring /Users/nbhati/.fdk/configs.json: Cannot find module '/Users/nbhati/.fdk/configs.json'
+Require stack:
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/utils/file.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/configs.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/logger.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/index.js[0m
+2024-01-01 12:44:27.856 +0530 [debug] ([34mconfigs.js[0m) [31mloaded global configs as "{}"[0m
+2024-01-01 12:44:27.857 +0530 [debug] ([34mfile.js[0m) [31mError while requiring /Users/nbhati/codebase/freshdesk/fdk-extension/src/scripts/.fdk/configs.json: Cannot find module '/Users/nbhati/codebase/freshdesk/fdk-extension/src/scripts/.fdk/configs.json'
+Require stack:
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/utils/file.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/configs.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/lib/logger.js
+- /Users/nbhati/codebase/freshdesk/fdk-extension/mynode/lib/node_modules/fdk/index.js[0m
+2024-01-01 12:44:27.857 +0530 [debug] ([34mconfigs.js[0m) [31mloaded local configs as "{}"[0m
+2024-01-01 12:44:27.857 +0530 [debug] ([34mconfigs.js[0m) [31mloaded env configs as "{"updates":{},"log":{},"javascript":{},"request":{"timeout":5000}}"[0m
+2024-01-01 12:44:27.857 +0530 [debug] ([34mconfigs.js[0m) [31mloaded resolved configs as "{"updates":{"manifest_url":"https://cdn.freshdev.io/assets/fdk/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":5000}}"[0m
+2024-01-01 12:44:27.857 +0530 [debug] ([34mlogger.js[0m) [31mStarting FDK in node v18.12.1 on darwin[0m
+2024-01-01 12:44:27.857 +0530 [debug] ([34msequelize.js[0m) [31msetting up sqilite at "/Users/nbhati/codebase/freshdesk/fdk-extension/src/scripts/.fdk/store.sqlite"[0m
+2024-01-01 12:44:27.858 +0530 [debug] ([34mdata.js[0m) [31mRead {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version will be deprecated by September 30, 2023 There will be no further feature updates to this version. For a seamless app building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshdesk.com/v2/docs/migration-overview/#latest_platform_version_migration."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshcloud.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.0.4","command":"npm install https://cdn.freshcloud.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshdesk.com/v2/docs/what's-new/ ."}},"addon":{"version":"2.0.0","url":"https://cdn.freshcloud.io/assets/fdk/addons/addon-2.0.0.zip"}},"last_updated":{"time_stamp":1703244802765}}[0m
+2024-01-01 12:44:27.858 +0530 [debug] ([34mupdater.js[0m) [31mlast check more than 24 hours ago, looking for updates again[0m
+2024-01-01 12:44:29.761 +0530 [debug] ([34mupdater.js[0m) [31mdownloaded update manifest as {"cli":{"deprecated":{"version":"<9","message":"This FDK version will be deprecated by September 30, 2023 There will be no further feature updates to this version. For a seamless app building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshdesk.com/v2/docs/migration-overview/#latest_platform_version_migration."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.0.7","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshdesk.com/v2/docs/what's-new/ ."}},"addon":{"version":"1.13.8","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}}[0m
