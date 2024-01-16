@@ -5,7 +5,7 @@ echo "|     |    | |  \ "
 echo "|     |__ /  |   \ "
                
 
-curDir=`pwd` 
+curDir=`pwd`
 printf "Please select folder for installation:\n"
 select d in ~/*; do test -n "$d" && break; echo ">>> Invalid Selection"; done
 cd "$d"
@@ -18,7 +18,15 @@ dir=$(dirname "$(dirname $curDir)")
 
 curl -o node-$nodeVersion-darwin-x64.tar.gz https://nodejs.org/dist/$nodeVersion/node-$nodeVersion-darwin-x64.tar.gz
 tar -xzf node-$nodeVersion-darwin-x64.tar.gz --strip-components=1
-source $curDir/local.zshrc $dir
+
+JSON_RAW='{\n\t"path":"%s"\n}\n'
+
+cd $curDir
+
+printf $JSON_RAW $dir > "config.json"
+
+
+source local.zshrc
 
 nodeVer=`node -v`
 
