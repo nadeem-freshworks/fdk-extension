@@ -1,8 +1,15 @@
+
+param (
+    [string]$configPath
+)
+
+Clear-Host
+Write-Host "Loading the FDK"
 # get the path configs
 $curDir = Get-Location
-$relativePath = "src\configs.json"
+$relativePath = $configPath
 
-$jsonFilePath = Join-Path -Path $curDir -ChildPath $relativePath
+$jsonFilePath =  $configPath #Join-Path -Path $curDir -ChildPath $relativePath
 
 $jsonContent = Get-Content -Path $jsonFilePath -Raw
 
