@@ -8,6 +8,10 @@ function installFDK(platform: string, context: vscode.ExtensionContext) {
 
 	if (platform === 'win32') {
 		console.log('You are on Windows.');
+		const terminal = vscode.window.createTerminal('Install FDK');
+		const installFdkFilePath = path.join(context.extensionPath, 'src/scripts/windows', 'installFdk.ps1');
+		const configPath = path.join(context.extensionPath, 'src/', 'configs.json')
+		terminal.sendText(`${installFdkFilePath} -configPath ${configPath}`);
 
 	} else if (platform === 'darwin') {
 		console.log('You are on macOS.');
@@ -26,7 +30,14 @@ function installFDK(platform: string, context: vscode.ExtensionContext) {
 
 function loadFdk(platform: string, context: vscode.ExtensionContext) {
 	if (platform === 'win32') {
+		
 		console.log('You are on Windows.');
+		const terminal = vscode.window.createTerminal('Load  FDK');
+		terminal.show();
+		const loadfdkFilePath = path.join(context.extensionPath, 'src/scripts/windows', 'loadFdk.ps1');
+		const configPath = path.join(context.extensionPath, 'src/', 'configs.json')
+		terminal.sendText(`${loadfdkFilePath} -configPath ${configPath}`);
+
 	} else if (platform === 'darwin') {
 		const terminal = vscode.window.createTerminal('Load  FDK');
 		terminal.show();
@@ -47,6 +58,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 	console.log('Congratulations, your extension "fdk-extension" is now active!');
 	let disposable = vscode.commands.registerCommand('fdk-extension.installFdk', () => {
+		const message = "hello world";
+		vscode.window.showInformationMessage(message);
 		installFDK(platform, context);
 	});
 
