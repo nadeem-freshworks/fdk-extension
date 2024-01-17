@@ -23,10 +23,11 @@ JSON_RAW='{\n\t"path":"%s"\n}\n'
 
 cd $curDir
 
-printf $JSON_RAW $dir > "config.json"
+printf $JSON_RAW $d > "$curDir/src/configs.json"
 
+localZshrc="$curDir/src/scripts/mac/local.zshrc"
 
-source local.zshrc
+source $localZshrc
 
 nodeVer=`node -v`
 
