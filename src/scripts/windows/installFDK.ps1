@@ -4,6 +4,9 @@ param (
 
 $curDir = Get-Location
 
+# Specify desired versions
+$nodeVersion = "v18.12.1"
+$npmVersion = "8.19.2"
 
 Write-Host  $curDir
 Write-Host "Please select folder for installation:"
@@ -50,16 +53,18 @@ Set-Location $selectedDirectory.FullName
 Clear-Host
 Write-Host "Installing the FDK"
 
-$nodePath = Join-Path -Path $selectedDirectory.FullName -ChildPath "\node18\node-v18.12.1-win-x64;"
+$nodeVersion = "v18.12.1"
+
+$nodePath = Join-Path -Path $selectedDirectory.FullName -ChildPath "\node18\node-$nodeVersion-win-x64;"
 $nodeGlobalPath = Join-Path -Path $selectedDirectory.FullName -ChildPath "\node18\node_global;"
 $nodeCachePath = Join-Path -Path $selectedDirectory.FullName -ChildPath "\node18\node_cache"
 
 
 # Download Node.js
-Invoke-WebRequest -Uri 'https://nodejs.org/dist/v18.12.1/node-v18.12.1-win-x64.zip' -OutFile 'node-v18.12.1-win-x64.zip'
+Invoke-WebRequest -Uri "https://nodejs.org/dist/v18.12.1/node-$nodeVersion-win-x64.zip" -OutFile "node-$nodeVersion-win-x64.zip"
 
 # # Unzip the downloaded Node.js archive
-Expand-Archive -Path 'node-v18.12.1-win-x64.zip' -DestinationPath 'node18'
+Expand-Archive -Path "node-$nodeVersion-win-x64.zip" -DestinationPath 'node18'
 
 # # Update the PATH environment variable
 # # Update the PATH environment variable
@@ -74,9 +79,30 @@ npm config set cache $nodeCachePath
 
 Set-Location $curDir
 
+# Get node version
+$nodeVer = node -v
+
+
+# Check node installation
+if ($nodeVersion -eq $nodeVer) {
+    Write-Host "Installation of node successful!"
+} else {
+    Write-Host "Installation of node failed! Please try again."
+    exit
+}
+
+# Get npm version
+$npmVer = npm -v
+
+# Check npm installation
+if ($npmVersion -eq $npmVer) {
+    Write-Host "Installation of npm successful!"
+} else {
+    Write-Host "Installation of npm failed! Please try again."
+    exit
+}
+
 npm install 'https://cdn.freshdev.io/fdk/latest.tgz' --global
 
-fdk -v
-
-# node -v
-# npm -v
+$fdkVersion = fdk -v
+Write-Host "Successfully installed fdk $fdkVersion."
