@@ -20,7 +20,6 @@ function installFDK(platform: string, context: vscode.ExtensionContext) {
 		const terminal = vscode.window.createTerminal('Install FDK');
 		terminal.show();
 		terminal.sendText(`bash ${scriptPath}`);
-		terminal.sendText(`clear`);
 
 	} else {
 		console.log('Unsupported operating system.');
@@ -52,14 +51,19 @@ function loadFdk(platform: string, context: vscode.ExtensionContext) {
 		console.log('Unsupported operating system.');
 	}
 }
+
+function handleNewTerminal(terminal: vscode.Terminal) {
+    // This function will be called whenever a new terminal is created
+    console.log('New terminal opened:', terminal.name);
+}
 export function activate(context: vscode.ExtensionContext) {
 
 	const platform: string = os.platform();
-
+  // Register the event handler for terminal creation
+  context.subscriptions.push(vscode.window.onDidOpenTerminal(handleNewTerminal));
+	
 	console.log('Congratulations, your extension "fdk-extension" is now active!');
 	let disposable = vscode.commands.registerCommand('fdk-extension.installFdk', () => {
-		const message = "hello world";
-		vscode.window.showInformationMessage(message);
 		installFDK(platform, context);
 	});
 

@@ -1,17 +1,28 @@
 
 export ZSH="$HOME/.oh-my-zsh"
 
-INFILE=config.json
+# Get the presnt working directory
+curDir=`pwd`
+
+# Get the configs.json path dynamically 
+
+script_path="$0"
+script_directory="$(dirname "$script_path")"
+cd $script_directory
+cd ../..
+INFILE="configs.json"
+
 while read -r LINE
 do
     filecontent+="$LINE"
 done < "$INFILE"
 
+# get the path where node is copied
 dir=`echo $filecontent | grep -o '"path":"[^"]*' | cut -d'"' -f4`
-
-echo $dir
 
 ZSH_THEME="robbyrussell"
 
+export PATH="$dir/bin:$PATH"
 
-export PATH=$dir"/mynode/bin:$PATH"
+cd $curDir
+

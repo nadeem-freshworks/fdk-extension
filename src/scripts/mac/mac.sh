@@ -8,24 +8,29 @@ echo "|     |__ /  |   \ "
 curDir=`pwd`
 printf "Please select folder for installation:\n"
 select d in ~/*; do test -n "$d" && break; echo ">>> Invalid Selection"; done
-cd "$d"
 
 nodeVersion="v18.18.2"
 npmVersion="9.8.1"
 
-dir=$(dirname "$(dirname $curDir)")
+# Get the configs.json path dynamically 
 
-
-curl -o node-$nodeVersion-darwin-x64.tar.gz https://nodejs.org/dist/$nodeVersion/node-$nodeVersion-darwin-x64.tar.gz
-tar -xzf node-$nodeVersion-darwin-x64.tar.gz --strip-components=1
+script_path="$0"
+script_directory="$(dirname "$script_path")"
+cd $script_directory
+cd ../..
 
 JSON_RAW='{\n\t"path":"%s"\n}\n'
 
-cd $curDir
+printf $JSON_RAW $d > "configs.json"
 
-printf $JSON_RAW $d > "$curDir/src/configs.json"
 
-localZshrc="$curDir/src/scripts/mac/local.zshrc"
+# Go to user selcted path to download and strip the node
+cd $d
+curl -o node-$nodeVersion-darwin-x64.tar.gz https://nodejs.org/dist/$nodeVersion/node-$nodeVersion-darwin-x64.tar.gz
+tar -xzf node-$nodeVersion-darwin-x64.tar.gz --strip-components=1
+
+
+localZshrc="$script_directory/local.zshrc"
 
 source $localZshrc
 
@@ -47,4 +52,10 @@ else
     echo "Installation of npm failed! Please try again."
 fi
 
+
 npm install https://cdn.freshdev.io/fdk/latest.tgz --global
+
+cd $curDir
+source $localZshrc
+
+fdk -v
