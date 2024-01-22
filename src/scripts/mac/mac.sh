@@ -58,4 +58,6 @@ npm install https://cdn.freshdev.io/fdk/latest.tgz --global
 cd $curDir
 source $localZshrc
 
+clear
+
 fdk -v

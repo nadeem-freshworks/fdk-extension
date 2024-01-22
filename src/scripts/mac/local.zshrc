@@ -25,4 +25,5 @@ ZSH_THEME="robbyrussell"
 export PATH="$dir/bin:$PATH"
 
 cd $curDir
+clear
 

@@ -6,8 +6,23 @@ import * as fs from 'fs';
 
 const platform: string = os.platform();
 
+function checkFdkInstalled(platform: string, context: vscode.ExtensionContext) {
+	const configPath = path.join(context.extensionPath, 'src/', 'configs.json')
+	const configData = fs.readFileSync(configPath, 'utf8');
+	const fdkPath = JSON.parse(configData).path;
+	if(fdkPath){
+		return true;
+	}
+	return false;
+}
+
 
 function installFDK(platform: string, context: vscode.ExtensionContext) {
+	// check the if fdk is installed or not
+	if (checkFdkInstalled(platform, context)) {
+		vscode.window.showInformationMessage('FDK is already installed.');
+		return;
+	}
 
 	if (platform === 'win32') {
 		console.log('You are on Windows.');
@@ -32,6 +47,10 @@ function installFDK(platform: string, context: vscode.ExtensionContext) {
 
 function loadFdk(platform: string, context: vscode.ExtensionContext, terminal: vscode.Terminal | undefined = undefined) {
 
+	// check the if fdk is installed or not
+	if (!checkFdkInstalled(platform, context)) {
+		return;
+	}
 	if (!terminal) {
 		terminal = vscode.window.createTerminal('Load  FDK');
 	}
