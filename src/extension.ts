@@ -2,6 +2,9 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import * as os from 'os';
+import * as fs from 'fs';
+
+const platform: string = os.platform();
 
 
 function installFDK(platform: string, context: vscode.ExtensionContext) {
@@ -27,41 +30,42 @@ function installFDK(platform: string, context: vscode.ExtensionContext) {
 
 }
 
-function loadFdk(platform: string, context: vscode.ExtensionContext) {
+function loadFdk(platform: string, context: vscode.ExtensionContext, terminal: vscode.Terminal | undefined = undefined) {
+
+	if (!terminal) {
+		terminal = vscode.window.createTerminal('Load  FDK');
+	}
+	terminal.show();
+
+	// check the if config.json file has the data or not
 	if (platform === 'win32') {
-		
-		console.log('You are on Windows.');
-		const terminal = vscode.window.createTerminal('Load  FDK');
-		terminal.show();
 		const loadfdkFilePath = path.join(context.extensionPath, 'src/scripts/windows', 'loadFdk.ps1');
 		const configPath = path.join(context.extensionPath, 'src/', 'configs.json')
 		terminal.sendText(`${loadfdkFilePath} -configPath ${configPath}`);
-
 	} else if (platform === 'darwin') {
-		const terminal = vscode.window.createTerminal('Load  FDK');
-		terminal.show();
 		const localZshrcPath = path.join(context.extensionPath, 'src/scripts/mac', 'local.zshrc');
 		terminal.sendText(`source ${localZshrcPath}`);
-		terminal.sendText(`clear`);
-
-		const outputChannel = vscode.window.createOutputChannel('Load FDK');
-		outputChannel.appendLine('FDK loaded process completed.');
-		outputChannel.show();
-	}  else {
+	} else {
 		console.log('Unsupported operating system.');
 	}
 }
 
-function handleNewTerminal(terminal: vscode.Terminal) {
-    // This function will be called whenever a new terminal is created
-    console.log('New terminal opened:', terminal.name);
-}
 export function activate(context: vscode.ExtensionContext) {
+	// You can also listen for the onDidOpenTerminal event
 
-	const platform: string = os.platform();
-  // Register the event handler for terminal creation
-  context.subscriptions.push(vscode.window.onDidOpenTerminal(handleNewTerminal));
+	// create a file  if not exist
+	const configPath = path.join(context.extensionPath, 'src/', 'configs.json')
+	if (!fs.existsSync(configPath)) {
+		fs.writeFileSync(configPath, '{}');
+	}
 	
+	let terminalOpenedDisposable = vscode.window.onDidOpenTerminal((terminal) => {
+		loadFdk(platform, context, terminal);
+	});
+
+	// Make sure to dispose of the event handler when the extension is deactivated
+	context.subscriptions.push(terminalOpenedDisposable);
+
 	console.log('Congratulations, your extension "fdk-extension" is now active!');
 	let disposable = vscode.commands.registerCommand('fdk-extension.installFdk', () => {
 		installFDK(platform, context);
@@ -70,6 +74,8 @@ export function activate(context: vscode.ExtensionContext) {
 	disposable = vscode.commands.registerCommand('fdk-extension.loadFdk', () => {
 		loadFdk(platform, context);
 	});
+
+
 	context.subscriptions.push(disposable);
 }
 

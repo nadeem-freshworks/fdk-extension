@@ -19,7 +19,9 @@ $jsonObject = $jsonContent | ConvertFrom-Json
 $nodeDir = $jsonObject.path
 
 
-$nodeVersion = "v18.12.1"
+# Specify desired versions
+$nodeVersion="v18.18.2"
+$npmVersion="9.8.1"
 
 $nodePath = Join-Path -Path $nodeDir -ChildPath "\node18\node-$nodeVersion-win-x64;"
 $nodeGlobalPath = Join-Path -Path $nodeDir -ChildPath "\node18\node_global;"
@@ -29,9 +31,6 @@ $env:PATH =$nodePath+ $env:PATH
 $env:PATH =$nodeGlobalPath+ $env:PATH
 
 
-# Specify desired versions
-$nodeVersion = "v18.12.1"
-$npmVersion = "8.19.2"
 
 $nodeVer = node -v
 # Check node installation
